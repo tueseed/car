@@ -7,6 +7,7 @@ function car_data()
 			async: true,
 			cache: false,
 			processData: false,
+			crossDomain: true,
 			contentType: false,
 			success: function(response) {
 						var obj = jQuery.parseJSON(response);
