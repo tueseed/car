@@ -171,6 +171,7 @@
 			<div class="row row-center">
 				<div class="col-lg-4 offset-lg-4">
 					<input type="button" class="btn btn-success" data-toggle="modal" href="#addtopic" value="สร้างการประชุม">
+					<input type="button" class="btn btn-success" value="GET_DATA" onclick="car_data()">
 				</div>
 			</div>
 			<div class="modal fade" id="addtopic" role="dialog">
