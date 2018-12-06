@@ -1,19 +1,22 @@
 <html>
 	<head>
-		<title>บันทึกข้อมูลการใช้รถ</title>
+		<title>ระบบแจ้งเตือนการประชุมผ่านแอพพลิเคชั่นไลน์</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0," charset="utf-8">
 		<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link href="tagsinput.css" rel="stylesheet" type="text/css">
+		<script src="tagsinput.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="car.js"></script>
+		<script src="kpi.js"></script>
 		<style type="text/css">
 			.row-center
 			{
@@ -150,20 +153,28 @@
 		document.getElementById("mySidenav").style.width = "0";
 	}
 	</script>
-	<body onload="car_data()">
-		<!--<div id="mySidenav" class="sidenav">
+	<body>
+		<?php
+			$server = "us-cdbr-iron-east-01.cleardb.net";
+			$username = "b946a03b24557c";
+			$password = "0000fb9a";
+			$db = "heroku_91b59e978ea198b";
+			$conn = new mysqli($server, $username, $password, $db);
+			mysqli_query($conn, "SET NAMES utf8");
+		?>
+		<div id="mySidenav" class="sidenav">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		  <a href="index.php">สร้างการประชุม</a>
 		  <a href="edit.php">แก้ไขการประชุม</a>
 		  <a href="inform.php">ประชาสัมพันธ์</a>
-		</div>-->
+		</div>
 		<div class="container-fluid" style="background-color:#b461fb;">
 			<div class="row row-center" >
 				<div class="col-lg-1">
 					<h3><span style="cursor:pointer" onclick="openNav()">&#9776;</span></h3>
 				</div>
 				<div class="col-lg-10" style="background-color:#b461fb;">
-					<h3>บันทึกข้อมูลการใช้รถ</h3>
+					<h3>ระบบแจ้งเตือนการประชุมผ่านแอพพลิเคชั่นไลน์</h3>
 				</div>
 			</div>
 		</div>
@@ -171,11 +182,10 @@
 			<div class="row row-center">
 				<div class="col-lg-4 offset-lg-4">
 					<input type="button" class="btn btn-success" data-toggle="modal" href="#addtopic" value="สร้างการประชุม">
-					<input type="button" class="btn btn-success" value="GET_DATA" onclick="car_data()">
 				</div>
 			</div>
 			<div class="modal fade" id="addtopic" role="dialog">
-				
+				<script src="putin.js"></script>
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<form name="form1" id="form1" onsubmit="send()">
@@ -294,17 +304,39 @@
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">#</th>
-									<th scope="col">หมายเลขทะเบียน</th>
-									<th scope="col">ประเภทรถ</th>
-									<th scope="col">ยี่ห้อ</th>
-									<th scope="col">น้ำมันเชิ้อเพลิง</th>
-									
+									<th scope="col">หัวข้อการประชุม</th>
+									<th scope="col">วันที่</th>
+									<th scope="col">ตั้งแต่เวลา</th>
+									<th scope="col">ถึงเวลา</th>
+									<th scope="col">สถานที่</th>
+									<th scope="col">รายละเอียด/ผู้เข้าประชุม</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>dsadsdasd</td>
-								</tr>
+								<?php
+									require('db/connect-db.php');
+									$a = 1;
+									$sql_meeting = "SELECT * FROM tbl_meeting";
+									$query_meeting = mysqli_query($conn,$sql_meeting);
+									while($obj_meet = mysqli_fetch_array($query_meeting))
+									{
+										echo "<tr>";
+										echo "<td>".$a."</td>";
+										echo "<td>".$obj_meet["meeting_topic"]."</td>";
+										echo "<td>".$obj_meet["meeting_date"]."</td>";
+										echo "<td>".$obj_meet["meeting_time"]."</td>";
+										echo "<td>".$obj_meet["meeting_time2"]."</td>";
+										echo "<td>".$obj_meet["meeting_place"]."</td>";
+										echo "<td>".$obj_meet["meeting_detail"]."</td>";
+								?>
+										<td><input type="button" class="btn btn-success" value="เอกสาร"></td>
+										<td><input type="button" class="btn btn-success" value="แจ้งเตือน" onclick="push_now(<?php echo $obj_meet["id"];?>)"></td>
+										<td><input type="button" class="btn btn-success" value="ลบ" onclick="del(<?php echo $obj_meet["id"].",'".$obj_meet["meeting_topic"]."'";?>)"></td>
+								<?php
+										echo "</tr>";
+										$a = $a +1 ;
+									}
+								?>
 							</tbody>
 						</table>
 					</div>
