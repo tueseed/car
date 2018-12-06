@@ -19,7 +19,7 @@ function car_data()
 							var x = obj[i].carnum + x;
 							var row = table.insertRow(i);
 							var cell1 = row.insertCell(0);
-							cell1.innerHTML = x;
+							cell1.innerHTML = obj[i].carnum;
 							//document.getElementById("tbl").innerHTML = "<tr><td>" + x +"</td></tr>"
 						}
 						alert(x);
