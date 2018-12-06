@@ -141,8 +141,6 @@
 		</style>
 	</head>
 	<body>
-		inform.php">ประชาสัมพันธ์</a>
-		</div>-->
 		<div class="container-fluid" style="background-color:#b461fb;">
 			<div class="row row-center" >
 				<div class="col-lg-1">
@@ -165,7 +163,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="table-responsive">
-						<table class="table table-hover">
+						<table class="table table-hover" id="tbl">
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">#</th>
