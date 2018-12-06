@@ -10,9 +10,9 @@ function car_data()
 			crossDomain: true,
 			contentType: false,
 			success: function(response) {
-						var obj = jQuery.parseJSON(response);
+						//var obj = jQuery.parseJSON(response);
 						var obj = JSON.parse(response);
-                        alert(obj[1]);
+                        alert(obj[1].car_num);
                     },
 			});
 }
