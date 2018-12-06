@@ -11,7 +11,7 @@ function car_data()
 			contentType: false,
 			success: function(response) {
 						var obj = jQuery.parseJSON(response);
-                        alert(obj[0].car_num);
+                        alert(obj[0]);
                     },
 			});
 }
