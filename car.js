@@ -16,6 +16,7 @@ function car_data()
 						for(i in obj)
 						{
 							var x = obj[i].carnum + x;
+							document.getElementById("tbl").innerHTML = "<tr><td>" + x +"</td></tr>"
 						}
 						alert(x);
                     },
