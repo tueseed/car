@@ -15,7 +15,7 @@ function car_data()
                         //alert(obj.car1.car_num);
 						for(i in obj)
 						{
-							var x = x + obj[i].car_num;
+							var x = x + obj[i].carnum;
 						}
 						alert(x);
                     },
