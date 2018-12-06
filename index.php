@@ -175,7 +175,7 @@
 				</div>
 			</div>
 			<div class="modal fade" id="addtopic" role="dialog">
-				<script src="putin.js"></script>
+				
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<form name="form1" id="form1" onsubmit="send()">

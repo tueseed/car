@@ -3,7 +3,7 @@ function car_data()
 	
 	$.ajax({
 			url: 'https://python-pea.herokuapp.com/car_data',
-			method: 'GET',
+			method: 'POST',
 			async: true,
 			cache: false,
 			processData: false,
