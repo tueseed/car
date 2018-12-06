@@ -12,7 +12,7 @@ function car_data()
 			success: function(response) {
 						var obj = jQuery.parseJSON(response);
 						var obj = JSON.parse(response);
-                        alert(obj[0].car_num);
+                        alert(obj[0][0]);
                     },
 			});
 }
