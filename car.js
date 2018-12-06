@@ -1,6 +1,6 @@
 function car_data()
 {
-	alert("fdsfsdfdf");
+	
 	$.ajax({
 			url: 'https://python-pea.herokuapp.com/car_data',
 			method: 'GET',
@@ -9,7 +9,7 @@ function car_data()
 			processData: false,
 			contentType: false,
 			success: function(response) {
-                        alert(response);
+                        alert("มันมาแล้ว");
                     }			
 			});
 }
