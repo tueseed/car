@@ -1,5 +1,6 @@
 function car_data()
 {
+	alert("fdsfsdfdf");
 	$.ajax({
 			url: 'https://python-pea.herokuapp.com/car_data',
 			method: 'GET',
