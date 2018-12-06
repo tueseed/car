@@ -13,6 +13,5 @@ function car_data()
 						var obj = jQuery.parseJSON(response);
                         alert(obj[0].car_num);
                     },
-			beforeSend: setHeader
 			});
 }
