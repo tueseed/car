@@ -140,7 +140,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="car_data()">
 		<div class="container-fluid" style="background-color:#b461fb;">
 			<div class="row row-center" >
 				<div class="col-lg-1">
@@ -176,7 +176,7 @@
 							</thead>
 							<tbody id="tbl">
 								<tr>
-									<td>dsadsdasd</td>
+									<!-DATA FROM FIRE BASE->>
 								</tr>
 							</tbody>
 						</table>
