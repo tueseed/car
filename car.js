@@ -26,7 +26,7 @@ function car_data()
 							cell2.innerHTML = obj[i].car_type;
 							cell3.innerHTML = obj[i].brand;
 							cell4.innerHTML = obj[i].fuel;
-							cell5.innerHTML = '<button type="submit" class="btn btn-default">QRCODE</button>';
+							cell5.innerHTML = '<button type="submit" class="btn btn-success">QRCODE</button>';
 						}
                     },
 			});
