@@ -210,7 +210,6 @@
 						<table class="table table-hover">
 							<thead class="thead-dark">
 								<tr>
-									<th scope="col">#</th>
 									<th scope="col">หมายเลขทะเบียน</th>
 									<th scope="col">ประเภทรถ</th>
 									<th scope="col">ยี่ห้อ</th>

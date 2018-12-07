@@ -32,6 +32,11 @@ function car_data()
 
 function add_car()
 {
+	var formData = new FormData();
+	formData.append('car_num', $("#car_num").val());
+	formData.append('car_type', $("#car_type").val());
+	formData.append('brand', $("#brand").val());
+	formData.append('fuel', $("#fuel").val());
 	$.ajax({
 			url: 'https://python-pea.herokuapp.com/add_car',
 			method: 'POST',
@@ -41,18 +46,7 @@ function add_car()
 			crossDomain: true,
 			contentType: false,
 			success: function(response) {
-						//var obj = jQuery.parseJSON(response);
-						var obj = JSON.parse(response);
-                        //alert(obj.car1.car_num);
-						var table = document.getElementById("tbl");
-						for(i in obj)
-						{
-							var x = obj[i].carnum + x;
-							var row = table.insertRow(i);
-							var cell1 = row.insertCell(0);
-							cell1.innerHTML = obj[i].carnum;
-							//document.getElementById("tbl").innerHTML = "<tr><td>" + x +"</td></tr>"
-						}
+						alert(response);
                     },
 			});
 }
