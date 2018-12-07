@@ -154,8 +154,52 @@
 		<div class="mt-2 container-fluid">
 			<div class="row row-center">
 				<div class="col-lg-4 offset-lg-4">
-					<input type="button" class="btn btn-success" data-toggle="modal" href="#addtopic" value="สร้างการประชุม">
-					<input type="button" class="btn btn-success" value="GET_DATA" onclick="car_data()">
+					<input type="button" class="btn btn-success" data-toggle="modal" href="#addtopic" value="เพิ่มข้อมูลรถ">
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="addtopic" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<form name="form1" id="form1" onsubmit="send()">
+						<div class="modal-header">
+							<h4 class="modal-title">เพิ่มข้อมูลยานพาหนะ</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="car_num">หมายเลขทะเบียน</label>
+										<input class="form-control" type="text" name="car_num" id="car_num" required />
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="car_type">ประเภทรถ</label>
+										<input class="form-control" type="text" name="car_type" id="car_type" required>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="brand">ยี่ห้อ</label>
+										<input class="form-control" type="text" name="brand" id="brand" required >
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="fuel">น้ำมันเชื้อเพลิง</label>
+										<input class="form-control" type="text" name="fuel" id="fuel" required >
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-default" onclick="add_car()">ตกลง</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -176,7 +220,7 @@
 							</thead>
 							<tbody id="tbl">
 								<tr>
-									<!-DATA FROM FIRE BASE->>
+									<!--DATA FROM FIRE BASE-->>
 								</tr>
 							</tbody>
 						</table>
