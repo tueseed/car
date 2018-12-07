@@ -40,6 +40,7 @@ function add_car()
 	$.ajax({
 			url: 'https://python-pea.herokuapp.com/add_car',
 			method: 'POST',
+			data: formData,
 			async: true,
 			cache: false,
 			processData: false,
@@ -48,5 +49,8 @@ function add_car()
 			success: function(response) {
 						alert(response);
                     },
+			complete: function() {
+                        location.reload();
+                    }
 			});
 }
