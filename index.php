@@ -220,7 +220,7 @@
 							</thead>
 							<tbody id="tbl">
 								<tr>
-									<!--DATA FROM FIRE BASE-->>
+									<!--DATA FROM FIRE BASE-->
 								</tr>
 							</tbody>
 						</table>
