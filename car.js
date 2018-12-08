@@ -22,11 +22,13 @@ function car_data()
 							var cell3 = row.insertCell(2);
 							var cell4 = row.insertCell(3);
 							var cell5 = row.insertCell(4);
+							var cell6 = row.insertCell(5);
 							cell1.innerHTML = obj[i].car_num;
 							cell2.innerHTML = obj[i].car_type;
 							cell3.innerHTML = obj[i].brand;
 							cell4.innerHTML = obj[i].fuel;
-							cell5.innerHTML = '<button type="submit" class="btn btn-success">QRCODE</button>';
+							cell5.innerHTML = '<button type="submit" data-toggle="modal" href="#addtopic" class="btn btn-success" onclick="creat_qr(' + obj[i].car_num + ')">QRCODE</button>';
+							cell6.innerHTML = '<button type="submit" class="btn btn-success">REPORT</button>';
 						}
                     },
 			});
@@ -55,4 +57,10 @@ function add_car()
                         location.reload();
                     }
 			});
+}
+function creat_qr(car_num)
+{
+	var qr_head = document.getElementById("qr_car_num")
+	qr_head.innerHTML = "หมายเลขทะเบียน " + car_num;
+	new QRCode(document.getElementById("qrc"), car_num);
 }

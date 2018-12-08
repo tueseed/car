@@ -14,6 +14,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="car.js"></script>
+		<script src="qrcode.js"></script>
 		<style type="text/css">
 			.row-center
 			{
@@ -155,6 +156,23 @@
 			<div class="row row-center">
 				<div class="col-lg-4 offset-lg-4">
 					<input type="button" class="btn btn-success" data-toggle="modal" href="#addtopic" value="เพิ่มข้อมูลรถ">
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="qrcode" role="dailog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+							<h4 class="modal-title" id="qr_car_num">หมายเลขทะเบียน</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="row row-center">
+							<div class="col-lg-12">
+								<div id="qrc"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
