@@ -27,8 +27,8 @@ function car_data()
 							cell2.innerHTML = obj[i].car_type;
 							cell3.innerHTML = obj[i].brand;
 							cell4.innerHTML = obj[i].fuel;
-							var data_send = "'" + obj[i].car_num + "'"; 
-							cell5.innerHTML = "<button type='submit' data-toggle='modal' href='#qrcode' class='btn btn-success' onclick='creat_qr(data_send)'>QRCODE</button>";
+							//var data_send = "'" + obj[i].car_num + "'"; 
+							cell5.innerHTML = "<button type='submit' data-toggle='modal' href='#qrcode' class='btn btn-success' onclick='creat_qr(\""+ obj[i].car_num +"\")'>QRCODE</button>";
 							cell6.innerHTML = '<button type="submit" class="btn btn-success">REPORT</button>';
 						}
                     },
