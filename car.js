@@ -61,6 +61,6 @@ function add_car()
 function creat_qr()
 {
 	var qr_head = document.getElementById("qr_car_num")
-	qr_head.innerHTML = "หมายเลขทะเบียน2156121 ";
-	//new QRCode(document.getElementById("qrc"), car_num);
+	qr_head.innerHTML = "หมายเลขทะเบียน99999999999999 ";
+	new QRCode(document.getElementById("qrc"), "jdklajijvakla;jviovkdls;ajviorv");
 }
