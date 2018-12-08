@@ -168,8 +168,8 @@
 					</div>
 					<div class="modal-body">
 						<div class="row row-center">
-							<div class="col-lg-12">
-								<div id="qrc"></div>
+							<div class="col-lg-6" id="qrc">
+								
 							</div>
 						</div>
 					</div>
