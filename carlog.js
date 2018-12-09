@@ -1,5 +1,6 @@
 function find_car()
 {
+	alert("mdl;smfl;sdmfsdf");
 	var url_string = window.location.href;
 	var url = new URL(url_string);
 	var car_num = url.searchParams.get("car_num");
