@@ -25,7 +25,7 @@ function car_data()
 							var cell6 = row.insertCell(5);
 							cell1.innerHTML = obj[i].car_num;
 							cell2.innerHTML = obj[i].car_type;
-							cell3.innerHTML = obj[i].brand;
+							cell3.innerHTML = obj[i].engine;
 							cell4.innerHTML = obj[i].fuel;
 							//var data_send = "'" + obj[i].car_num + "'"; 
 							cell5.innerHTML = "<button type='submit' data-toggle='modal' href='#qrcode' class='btn btn-success' onclick='creat_qr(\""+ obj[i].car_num +"\")'>QRCODE</button>";
